@@ -1,0 +1,12 @@
+C:\Users\Elton Oliveira\Desktop\PassIn\PassIn.Communication\obj\Debug\net8.0\PassIn.Communication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Elton Oliveira\Desktop\PassIn\PassIn.Communication\obj\Debug\net8.0\PassIn.Communication.AssemblyInfoInputs.cache
+C:\Users\Elton Oliveira\Desktop\PassIn\PassIn.Communication\obj\Debug\net8.0\PassIn.Communication.AssemblyInfo.cs
+C:\Users\Elton Oliveira\Desktop\PassIn\PassIn.Communication\obj\Debug\net8.0\PassIn.Communication.csproj.CoreCompileInputs.cache
+C:\Users\Elton Oliveira\Desktop\PassIn\PassIn.Communication\obj\Debug\net8.0\PassIn.Communication.sourcelink.json
+C:\Users\Elton Oliveira\Desktop\PassIn\PassIn.Communication\bin\Debug\net8.0\PassIn.Communication.deps.json
+C:\Users\Elton Oliveira\Desktop\PassIn\PassIn.Communication\bin\Debug\net8.0\PassIn.Communication.dll
+C:\Users\Elton Oliveira\Desktop\PassIn\PassIn.Communication\bin\Debug\net8.0\PassIn.Communication.pdb
+C:\Users\Elton Oliveira\Desktop\PassIn\PassIn.Communication\obj\Debug\net8.0\PassIn.Communication.dll
+C:\Users\Elton Oliveira\Desktop\PassIn\PassIn.Communication\obj\Debug\net8.0\refint\PassIn.Communication.dll
+C:\Users\Elton Oliveira\Desktop\PassIn\PassIn.Communication\obj\Debug\net8.0\PassIn.Communication.pdb
+C:\Users\Elton Oliveira\Desktop\PassIn\PassIn.Communication\obj\Debug\net8.0\ref\PassIn.Communication.dll
