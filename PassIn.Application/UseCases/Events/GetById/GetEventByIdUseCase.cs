@@ -1,4 +1,5 @@
-﻿using PassIn.Communication.Responses;
+﻿using Microsoft.EntityFrameworkCore;
+using PassIn.Communication.Responses;
 using PassIn.Exceptions;
 using PassIn.Infrastructure;
 
@@ -10,7 +11,7 @@ public class GetEventByIdUseCase
     {
         var dbContext = new PassInDbContext();
 
-        var entity = dbContext.Events.Find(id);
+        var entity = dbContext.Events.Include(ev => ev.Attendees).FirstOrDefault(ev => ev.Id == id);
 
         if (entity is null)
             throw new NotFoundException("An event with this id dont exist");
@@ -20,7 +21,8 @@ public class GetEventByIdUseCase
             Id = entity.Id,
             Details = entity.Details,
             MaximumAttendees = entity.Maximum_Attendees,
-            Title = entity.Title
+            Title = entity.Title,
+            AttendeesAmount = entity.Attendees.Count()
         };
 
 
