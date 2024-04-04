@@ -6,4 +6,5 @@ public class ResponseEventJson
     public string Details { get; set; } = string.Empty;
     public int MaximumAttendees { get; set; }
     public int AttendeesAmount { get; set; }
+
 }

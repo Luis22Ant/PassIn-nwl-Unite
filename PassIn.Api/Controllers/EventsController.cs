@@ -1,7 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Azure;
+using Microsoft.AspNetCore.Mvc;
+using PassIn.Application.UseCases.Events.Delete;
+using PassIn.Application.UseCases.Events.GetAll;
 using PassIn.Application.UseCases.Events.GetById;
 using PassIn.Application.UseCases.Events.Register;
 using PassIn.Application.UseCases.Events.RegisterAttendee;
+using PassIn.Application.UseCases.Events.Update;
 using PassIn.Communication.Requests;
 using PassIn.Communication.Responses;
 
@@ -36,6 +40,43 @@ public class EventsController : ControllerBase
         var response = useCase.Execute(id);
 
         return Ok(response);
+    }
+
+    [HttpGet]
+    [ProducesResponseType(typeof(ResponseEventJson),StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseErrorJson),StatusCodes.Status404NotFound)]
+
+    public IActionResult GetAll()
+    {
+        var useCase = new GetAllUserCase();
+        var response = useCase.Execute();
+
+        return Ok(response);
+    }
+
+    [HttpPut]
+    [Route("{eventId}")]
+    [ProducesResponseType(typeof(ResponseEventJson),StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseErrorJson),StatusCodes.Status404NotFound)]
+
+    public IActionResult Update([FromRoute] Guid eventId, [FromBody] ResponseEventJson request)
+    {
+        var useCase = new UpdateUseCase();
+        var response = useCase.Execute(eventId,request);
+
+        return Ok(response);
+    }
+
+    [HttpDelete]
+    [Route("{idEvent}")]
+    [ProducesResponseType(typeof(ResponseEventJson),StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    public IActionResult Delete([FromRoute] Guid idEvent)
+    {
+        var useCases = new DeleteEventUseCases();
+        useCases.Execute(idEvent);
+
+        return Ok();
     }
 }
 
