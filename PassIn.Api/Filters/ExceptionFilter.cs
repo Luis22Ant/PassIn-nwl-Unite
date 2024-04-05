@@ -39,6 +39,11 @@ public class ExceptionFilter : IExceptionFilter
             context.HttpContext.Response.StatusCode = (int)HttpStatusCode.Conflict;
             context.Result = new ConflictObjectResult(new ResponseErrorJson(context.Exception.Message));
         }
+        else if (context.Exception is UnauthorizedException)
+        {
+            context.HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+            context.Result = new UnauthorizedObjectResult(new ResponseErrorJson(context.Exception.Message));
+        }
     }
 
     private void ThrowUnknowError(ExceptionContext context)

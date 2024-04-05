@@ -36,7 +36,6 @@ public class UpdateUseCase
             Details = entity.Details,
             MaximumAttendees = entity.Maximum_Attendees
         };
-
     }
 
     private void Validate(ResponseEventJson request)
